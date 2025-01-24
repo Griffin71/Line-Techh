@@ -1,0 +1,785 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+/* Disabled state styles */
+input:disabled, textarea:disabled, .star:disabled, button:disabled {
+    background-color: #f0f0f0;
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Comment Section Styles (unchanged) */
+#comments {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+#comments h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#comments p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#comment-name {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#comment-text {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.stars {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.star {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.star:hover {
+    color: #f39c12;
+}
+
+button[type="submit"] {
+    padding: 0.8rem 1.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Comment Display Styles */
+#comments-list {
+    margin-top: 2rem;
+}
+
+.comment-card {
+    padding: 1rem;
+    background-color: #fff;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.comment-card p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.comment-card small {
+    color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #comments h2 {
+        font-size: 1.8rem;
+    }
+
+    #comment-name,
+    #comment-text {
+        font-size: 0.9rem;
+    }
+
+    .star {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #comments h2 {
+        font-size: 1.6rem;
+    }
+
+    .star {
+        font-size: 1rem;
+    }
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(135deg, #343a40, #495057);
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1rem;
+    position: relative;
+}
+
+.header-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #f4c542;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    animation: fadeIn 2s;
+}
+
+header p {
+    font-size: 1.5rem;
+    margin-top: 0;
+    animation: fadeIn 3s;
+}
+
+/* Festive Banner */
+.festive-banner {
+    background-color: #f4c542;
+    color: #343a40;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    animation: slideDown 1s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.festive-banner #countdown {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.festive-banner button {
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.festive-banner button:hover {
+    background-color: #495057;
+}
+
+/* About Section */
+#about, #speciality, #projects {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+#about h2, #speciality h2, #projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #343a40;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+#about h2::after, #speciality h2::after, #projects h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #f4c542;
+}
+
+#about p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Speciality Section */
+#speciality p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* Projects Section */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    width: 300px;
+    text-align: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    font-size: 1.8rem;
+    color: #343a40;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.project-card a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+#social-links {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.social-container {
+    display: inline-block;
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.social-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-link:hover {
+    color: #007acc;
+    transition: color 0.3s ease;
+}
+
+
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #343a40, #495057);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .project-card {
+        width: 90%;
+    }
+
+    .stars {
+        width: 120px; /* Adjusted for smaller screens */
+        justify-content: space-evenly;
+    }
+
+    .star {
+        font-size: 20px; /* Smaller stars */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .stars {
+        width: 100px; /* Adjusted for smaller screens */
+        justify-content: space-evenly;
+    }
+
+    .star {
+        font-size: 18px; /* Smaller stars */
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    .project-card {
+        width: 45%;
+    }
+
+    .stars {
+        width: 150px; /* Larger stars on medium screens */
+        justify-content: space-evenly;
+    }
+
+    .star {
+        font-size: 25px; /* Larger stars */
+    }
+}
+
+@media (min-width: 1367px) and (max-width: 1920px) {
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    header p {
+        font-size: 1.5rem;
+    }
+
+    .project-card {
+        width: 30%;
+    }
+
+    .stars {
+        width: 180px; /* Adjusted for larger screens */
+        justify-content: space-evenly;
+    }
+
+    .star {
+        font-size: 30px; /* Larger stars */
+    }
+}
+
+@media (max-width: 320px) {
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+
+    .project-card {
+        width: 95%;
+    }
+
+    .stars {
+        width: 80px; /* Adjusted for extra small screens */
+        justify-content: space-evenly;
+    }
+
+    .star {
+        font-size: 15px; /* Smaller stars */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .project-card {
+        width: 90%;
+    }
+
+    .stars {
+        width: 120px;
+        justify-content: space-evenly;
+        display: flex;
+    }
+
+    .stars .star {
+        font-size: 20px !important; /* Ensure the star size is smaller */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    .stars {
+        width: 100px;
+        justify-content: space-evenly;
+        display: flex;
+    }
+
+    .stars .star {
+        font-size: 18px !important; /* Ensure the star size is smaller */
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    .project-card {
+        width: 45%;
+    }
+
+    .stars {
+        width: 150px;
+        justify-content: space-evenly;
+        display: flex;
+    }
+
+    .stars .star {
+        font-size: 25px !important; /* Larger stars for medium screens */
+    }
+}
+
+@media (min-width: 1367px) and (max-width: 1920px) {
+    header h1 {
+        font-size: 3.5rem;
+    }
+
+    header p {
+        font-size: 1.5rem;
+    }
+
+    .project-card {
+        width: 30%;
+    }
+
+    .stars {
+        width: 180px;
+        justify-content: space-evenly;
+        display: flex;
+    }
+
+    .stars .star {
+        font-size: 30px !important; /* Larger stars for larger screens */
+    }
+}
+
+@media (max-width: 320px) {
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+
+    .project-card {
+        width: 95%;
+    }
+
+    .stars {
+        width: 80px;
+        justify-content: space-evenly;
+        display: flex;
+    }
+
+    .stars .star {
+        font-size: 15px !important; /* Smaller stars for extra small screens */
+    }
+}
+
+/* Comment Section Styles */
+#comments {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+#comments h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#comments p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+#comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#comment-name {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#comment-text {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.stars {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.star {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.star:hover {
+    color: #f39c12;
+}
+
+button[type="submit"] {
+    padding: 0.8rem 1.5rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Comment Display Styles */
+#comments-list {
+    margin-top: 2rem;
+}
+
+.comment-card {
+    padding: 1rem;
+    background-color: #fff;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.comment-card p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.comment-card small {
+    color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #comments h2 {
+        font-size: 1.8rem;
+    }
+
+    #comment-name,
+    #comment-text {
+        font-size: 0.9rem;
+    }
+
+    .star {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #comments h2 {
+        font-size: 1.6rem;
+    }
+
+    .star {
+        font-size: 1rem;
+    }
+}
+
+
+logo {
+    font-size: 2em;
+    font-weight: bold;
+    color: #343a40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo .left-brace {
+    font-size: 4em;
+    color: #343a40; /* Dark color for the left brace */
+}
+
+.logo .right-brace {
+    font-size: 4em;
+    color: #f4c542; /* Yellow color for the right brace */
+}
+
+/* Styling for rating system */
+.rating {
+    margin-top: 15px;
+}
+
+.stars {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+}
+
+.star {
+    font-size: 25px;
+    background: none;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.star:hover,
+.star.selected {
+    color: gold;
+}
+
+/* Styling for average rating */
+.project-card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.project-card .rating p {
+    margin: 5px 0;
+}
+
+.project-card .rating span {
+    font-weight: bold;
+}
